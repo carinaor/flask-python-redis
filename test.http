@@ -1,0 +1,55 @@
+GET http://localhost:5000
+
+###
+GET http://localhost:5000/users
+
+###
+GET https://sheltered-beyond-98420.herokuapp.com/users
+
+###
+GET http://localhost:5000/user/1
+
+###
+POST http://localhost:5000/user/1
+Content-Type: application/json
+
+{
+  "email": "rosa_edited@gmail.com",
+  "firstname": "Rosa",
+  "id": 1,
+  "lastname": "Gomez",
+  "username": "rosita"
+}
+
+###
+DELETE http://localhost:5000/user/1
+
+###
+POST http://localhost:5000/user/changepsw/1
+Content-Type: application/json
+
+{
+    "password": "edited second time"
+}
+
+###
+POST http://localhost:5000/user/add
+Content-Type: application/json
+
+{
+    "firstname":"Rosa",
+    "lastname": "Gomez",
+    "username":"rosita",
+    "email": "rosa@gmail.com",
+    "password": "admin123"
+}
+
+###
+
+POST http://localhost:5000/users/filter
+Content-Type: application/json
+
+{
+  "PAGE_NUMBER": 1,
+  "ROWS_PER_PAGE": 10
+}
