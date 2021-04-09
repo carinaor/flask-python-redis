@@ -183,3 +183,4 @@ Response: Deleted
 
 > heroku open
 
+https://elements.heroku.com/addons/rediscloud
