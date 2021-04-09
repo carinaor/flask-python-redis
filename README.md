@@ -156,3 +156,30 @@ Request
     DELETE http://localhost:5000/user/1
 
 Response: Deleted
+
+# To test it in Heroku
+
+> git init
+
+> git add .
+
+> git commit -m 'initial commit'
+
+> heroku create
+
+> heroku config:set FLASK_APP=users_api
+
+> heroku config:set SECRET_KEY="`< /dev/urandom tr -dc 'a-zA-Z0-9' | head -c16`"
+
+> heroku addons:create heroku-postgresql:hobby-dev
+(once you get a free postgress db open the dashboard > Features > Postgres Db and look for the URL, it's important to change the start of the url from postgres:// to postgresql:// when replacing the config url)
+
+> git push heroku master
+
+> heroku ps
+(check that the Procfile was recognized correctly, it needs to be at the root folder)
+
+> heroku ps:scale web=1
+
+> heroku open
+
